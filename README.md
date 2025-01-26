@@ -74,11 +74,11 @@ Personas are calculated by analyzing **average speed** and **accuracy**, dividin
 
 Output for StudentPersona.py:
 
-User ID: YcDFSO4ZukTJnnFMgRNVwZTE4j42, Persona: The Prodigy
-User ID: userid1, Persona: The Speedster
-User ID: userid2, Persona: The Prodigy
-User ID: userid3, Persona: The Perfectionist
-User ID: userid4, Persona: The Explorer
+- User ID: YcDFSO4ZukTJnnFMgRNVwZTE4j42, Persona: The Prodigy
+- User ID: userid1, Persona: The Speedster
+- User ID: userid2, Persona: The Prodigy
+- User ID: userid3, Persona: The Perfectionist
+- User ID: userid4, Persona: The Explorer
 
 ![image](https://github.com/user-attachments/assets/4773d3df-c50c-4fad-b1ae-2212cb819d36)
 
