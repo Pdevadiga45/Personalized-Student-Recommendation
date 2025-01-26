@@ -45,4 +45,4 @@ total_questions=int(data['total_questions'])
 if attempted_questions >= 0.4 * total_questions:
     print(f"User ID: {data['user_id']}, Accuracy: {data['accuracy']}, Speed: {data['speed']}")
 else:
-    print("To provide a fair evaluation of the quiz, it's important to attempt a sufficient number of questions. Please aim to attempt more questions next time.")
+    print("Unfortunately We can't provide the accuracy and speed on this test. To provide a fair evaluation of the quiz, it's important to attempt a sufficient number of questions. Please aim to attempt more questions next time.")
