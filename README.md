@@ -12,7 +12,7 @@ Ensure HistoricalData.json is available in the specified directory for
 
 Ensure ```CurrentQuizUserDetails.json``` is available in the specified directory for ```currentQuizUserDataInsights&Recommendations.py```
 
-Open a terminal or command prompt & run the following script :
+**Open a terminal or command prompt & run the following script**:
 
 ```HistoricalDataAnalysis,Insights&Recommendation.py``` : Analyzes historical quiz data to calculate priority scores for topics and visualize performance trends.
 
