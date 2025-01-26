@@ -1,7 +1,7 @@
 # Personalized-Student-Recommendation
  Python-based solution to analyze quiz performance and provide students with personalized recommendations to improve their preparation.
 ### Data Visualizations
-Historical Data
+Historical Data Analysis and Insights
 
 Topics User needs to focus on based on their priority
 
