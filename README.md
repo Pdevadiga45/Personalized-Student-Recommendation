@@ -1,11 +1,40 @@
 # Personalized-Student-Recommendation
 A Python-based solution to analyze quiz performance and provide students with personalized recommendations to improve their preparation.
 
-## Data Visualizations
+## Historical Data Visualizations
 
-### 1. Historical Data Analysis and Insights
-Analyze historical data to identify performance trends and provide actionable insights.  
+### 1.  Recommendations and Insights
+Performance trends and actionable insights.  
 Based on the visualization, the user should focus on topics with the highest **`priority score`**.  
+
+### Priority Score Calculation and Significance
+
+**How Priority Score is Calculated**  
+The priority score ranks quiz topics based on their importance and relevance to the user's learning. It is computed using three key factors:  
+
+1. **Weightage Factor (W_w)**  
+   - Importance of the topic in the syllabus, derived from syllabus weightage percentages (source: Vedantu.com).  
+   - Ensures high-weightage topics are prioritized.  
+
+2. **Weakness Factor (W_r)**  
+   - Indicates how much the user struggles with a topic.  
+   - Calculated inversely from quiz scores, so lower performance increases the weakness factor.  
+
+3. **Recency Factor (W_c)**  
+   - Measures how recently the user attempted quizzes for the topic.  
+   - Recent attempts have higher scores, while older attempts decay over time to maintain relevance.  
+
+**Formula:**  
+Priority Score = (Weightage Factor * W_w) + (Weakness Factor * W_r) + (Recency Factor * W_c)
+
+
+**Significance of Priority Score**  
+- **Focus on Weak Areas:** Helps identify and address topics where the user struggles most.  
+- **Syllabus Alignment:** Ensures preparation focuses on high-weightage topics for maximum effectiveness.  
+- **Dynamic and Adaptive:** Adapts to the user's evolving performance and learning history, emphasizing recent activity for up-to-date insights.  
+
+By following these recommendations based on priority scores, users can optimize their study plans for improved preparation and outcomes.
+
 
 ![Historical Data](https://github.com/user-attachments/assets/679ad5f3-5869-4c9b-b768-18cffb7113bb)
 
