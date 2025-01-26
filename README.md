@@ -44,6 +44,8 @@ Visual representation of the user's average accuracy across all quiz topics, off
 ![Average Accuracy](https://github.com/user-attachments/assets/bcac31e6-ae68-411d-b45e-d7d6331a7266)
 
 
+### 3. Average Accuracy Across All Topics
+Visual representation of the user's average accuracy across all quiz topics, offering insights into areas of strength and improvement opportunities.  
 
 ## Student Persona
 
