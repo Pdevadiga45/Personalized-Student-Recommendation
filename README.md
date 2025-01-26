@@ -67,4 +67,13 @@ Personas are calculated by analyzing **average speed** and **accuracy**, dividin
 
 4. **The Explorer**  
    - Lower speed and lower accuracy.  
-   - Signifies a learning phase with opportunities for growth and skill-building.  
+   - Signifies a learning phase with opportunities for growth and skill-building.
+
+**Persona assigned based on the user's Historical Data provided**
+
+![image](https://github.com/user-attachments/assets/647c62d5-98ea-42a0-b88f-52914bbf09e8)
+
+![image](https://github.com/user-attachments/assets/5a9a1f64-627d-4a30-b3e8-e251d74bd41c)
+
+
+
