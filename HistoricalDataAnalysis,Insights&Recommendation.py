@@ -2,7 +2,8 @@ import json
 from datetime import datetime
 from collections import defaultdict
 import matplotlib.pyplot as plt
-import numpy as np
+import pandas as pd
+
 with open(r'D:\internassignment\HistoricalData.json', 'r') as file:
     data = json.load(file)
 
@@ -50,10 +51,10 @@ most_recent = max(timestamps)
 least_recent = min(timestamps)
 time_range = (most_recent - least_recent).days if (most_recent - least_recent).days > 0 else 1
 
+    # Calculate the decay based on the number of days since the most recent quiz
 decay_per_day = 0.01
 floor_value = 0.1  
 
-# Calculate the decay based on the number of days since the most recent quiz
 for entry, timestamp in zip(data, timestamps):
     days_since = (most_recent - timestamp).days
     decay = days_since * decay_per_day
@@ -68,7 +69,6 @@ for entry in weightageList:
     for chapter_name in entry["Chapter"]:
         weightage_dict[chapter_name.lower()] = entry["Weightage (%)"]
 
-# Step 4: Aggregate data by topic
 topic_data = defaultdict(list)
 
 for entry in data:
@@ -108,17 +108,16 @@ for topic, entries in topic_data.items():
         avg_recency * W_c
     )
     
-    # Calculate average accuracy for the topic
     average_topic_accuracy = topic_accuracy[topic] / topic_count[topic] if topic_count[topic] > 0 else 0
     
-    # Append each topic, its priority score, and average accuracy
+    # Append each topic, its priority score, and average accuracy 
     topic_priority_scores.append({
         "topic": topic,
         "priority_score": priority_score,
         "average_accuracy": average_topic_accuracy
     })
 
-# Output results for Debug
+# Output results
 for entry in topic_priority_scores:
     topic = entry["topic"]
     priority_score = entry["priority_score"]
@@ -146,8 +145,11 @@ plt.xticks(rotation=45, ha="right")
 plt.tight_layout()
 plt.show()
 
+# Find the topic with the highest and lowest priority scores
 strongest_topic = max(topic_priority_scores, key=lambda x: x['priority_score'])
 weakest_topic = min(topic_priority_scores, key=lambda x: x['priority_score'])
+
+# Print statement
 print(f"""To optimize your study efforts, focus on the topic '{strongest_topic['topic']}' with the highest priority score of {strongest_topic['priority_score']}, as it represents the area where you can improve the most. Conversely, the topic '{weakest_topic['topic']}' with the lowest priority score of {weakest_topic['priority_score']} indicates your strengths, so you can feel confident in that area.""")
 
 # Plot Average Accuracies
@@ -160,3 +162,18 @@ plt.xticks(rotation=45, ha="right")
 plt.tight_layout()
 plt.show()
 
+# Convert data to a DataFrame to Convert 'started_at' to datetime
+df = pd.DataFrame(data)
+df['started_at'] = pd.to_datetime(df['started_at'])
+df['accuracy'] = df['accuracy'].str.replace('%', '').str.strip().astype(int)
+
+plt.figure(figsize=(10, 6))
+plt.plot(df['started_at'], df['accuracy'], marker='o', color='blue', label='Accuracy')
+plt.xlabel('Date')
+plt.ylabel('Accuracy (%)')
+plt.title('Trend of Accuracy Over Time')
+plt.xticks(rotation=45)
+plt.legend()
+plt.grid()
+plt.tight_layout()
+plt.show()
