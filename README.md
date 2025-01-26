@@ -42,3 +42,29 @@ By following these recommendations based on priority scores, users can optimize 
 Visual representation of the user's average accuracy across all quiz topics, offering insights into areas of strength and improvement opportunities.  
 
 ![Average Accuracy](https://github.com/user-attachments/assets/bcac31e6-ae68-411d-b45e-d7d6331a7266)
+
+
+
+## Student Persona
+
+**What is a Student Persona?**  
+A "persona" is a descriptive label assigned to a user based on their performance across quizzes. It categorizes users into distinct groups, providing insights into their strengths and areas for improvement.  
+
+**How Personas are Determined**  
+Personas are calculated by analyzing **average speed** and **accuracy**, dividing performance into four quadrants:  
+
+1. **The Prodigy**  
+   - High speed and high accuracy.  
+   - Represents exceptional performance with balanced efficiency and precision.  
+
+2. **The Speedster**  
+   - High speed but lower accuracy.  
+   - Indicates efficiency in answering but highlights room for improving precision.  
+
+3. **The Perfectionist**  
+   - High accuracy but lower speed.  
+   - Reflects meticulousness and careful problem-solving with potential for increased efficiency.  
+
+4. **The Explorer**  
+   - Lower speed and lower accuracy.  
+   - Signifies a learning phase with opportunities for growth and skill-building.  
