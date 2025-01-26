@@ -1,6 +1,26 @@
 # Personalized-Student-Recommendation
 A Python-based solution to analyze quiz performance and provide students with personalized recommendations to improve their preparation.
 
+## Setup Instructions
+
+**Prerequisites** 
+
+Ensure you have Python 3.x and requirements.txt on your system.
+
+Ensure HistoricalData.json is available in the specified directory for
+```HistoricalDataAnalysis,Insights&Recommendation.py``` & ```StudentPersona.py```
+
+Ensure ```CurrentQuizUserDetails.json``` is available in the specified directory for ```currentQuizUserDataInsights&Recommendations.py```
+
+Open a terminal or command prompt & run the following script :
+
+```HistoricalDataAnalysis,Insights&Recommendation.py``` : Analyzes historical quiz data to calculate priority scores for topics and visualize performance trends.
+
+```StudentPersona.py``` : Classifies users into personas based on their average speed and accuracy, providing insights into their learning styles.
+
+```currentQuizUserDataInsights&Recommendations.py``` : Analyzes the latest quiz submission to provide insights into user performance and recommendations.
+
+
 ## Historical Data Visualizations
 
 ### 1.  Recommendations and Insights
