@@ -45,7 +45,10 @@ Visual representation of the user's average accuracy across all quiz topics, off
 
 
 ### 3. Average Accuracy Across All Topics
-Visual representation of the user's average accuracy across all quiz topics, offering insights into areas of strength and improvement opportunities.  
+The trend of accuracy over time reveals performance improvements, identifies challenges, and assesses the effectiveness of study strategies.
+
+![image](https://github.com/user-attachments/assets/655f1260-2268-40b5-8ae1-a857eb15d18f)
+
 
 ## Student Persona
 
@@ -85,5 +88,12 @@ Output for StudentPersona.py:
 ![image](https://github.com/user-attachments/assets/4773d3df-c50c-4fad-b1ae-2212cb819d36)
 
 
+## Current Quiz Data Insight and Visualizations
 
+The program creates a bar chart displaying the number of correct, incorrect, and unattempted questions.
+The code also evaluates a user's quiz performance by checking if they attempted at least 40% of the questions before displaying their accuracy and speed. Attempting 40% ensures statistical significance, reduces bias, and provides a comprehensive assessment of the user's knowledge and skills.
+
+
+
+![image](https://github.com/user-attachments/assets/20921078-a79c-40d1-9b91-1c9d9e840f95)
 
