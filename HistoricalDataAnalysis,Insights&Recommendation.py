@@ -50,22 +50,19 @@ most_recent = max(timestamps)
 least_recent = min(timestamps)
 time_range = (most_recent - least_recent).days if (most_recent - least_recent).days > 0 else 1
 
-# Define a decay factor (e.g., 0.01 per day) and a floor value
 decay_per_day = 0.01
-floor_value = 0.1  # Minimum recency factor
+floor_value = 0.1  
 
+# Calculate the decay based on the number of days since the most recent quiz
 for entry, timestamp in zip(data, timestamps):
     days_since = (most_recent - timestamp).days
-    # Calculate the decay based on the number of days since the most recent quiz
     decay = days_since * decay_per_day
-    # Ensure the recency factor is not below the floor value
     entry["recency_factor"] = max(floor_value, 1 - decay)  # Normalize: most recent = 1, oldest >= floor_value
 
 max_weightage = 100
 min_weightage = 0
 weightage_range = max_weightage - min_weightage if max_weightage != min_weightage else 1
 
-# Create a dictionary from weightageList for quick lookup
 weightage_dict = {}
 for entry in weightageList:
     for chapter_name in entry["Chapter"]:
@@ -86,7 +83,7 @@ topic_accuracy = {}
 topic_count = {}
 
 for entry in data:
-    topic = entry['quiz']['topic'].strip().lower()  #to make sure score across same topics are grouped together
+    topic = entry['quiz']['topic'].strip().lower()  
     accuracy_str = entry['accuracy']
     accuracy_value = int(accuracy_str.replace('%', '').strip())  
     
@@ -114,14 +111,14 @@ for topic, entries in topic_data.items():
     # Calculate average accuracy for the topic
     average_topic_accuracy = topic_accuracy[topic] / topic_count[topic] if topic_count[topic] > 0 else 0
     
-    # Append each topic, its priority score, and average accuracy as a dictionary
+    # Append each topic, its priority score, and average accuracy
     topic_priority_scores.append({
         "topic": topic,
         "priority_score": priority_score,
         "average_accuracy": average_topic_accuracy
     })
 
-# Output results
+# Output results for Debug
 for entry in topic_priority_scores:
     topic = entry["topic"]
     priority_score = entry["priority_score"]
@@ -149,6 +146,10 @@ plt.xticks(rotation=45, ha="right")
 plt.tight_layout()
 plt.show()
 
+strongest_topic = max(topic_priority_scores, key=lambda x: x['priority_score'])
+weakest_topic = min(topic_priority_scores, key=lambda x: x['priority_score'])
+print(f"""To optimize your study efforts, focus on the topic '{strongest_topic['topic']}' with the highest priority score of {strongest_topic['priority_score']}, as it represents the area where you can improve the most. Conversely, the topic '{weakest_topic['topic']}' with the lowest priority score of {weakest_topic['priority_score']} indicates your strengths, so you can feel confident in that area.""")
+
 # Plot Average Accuracies
 plt.figure(figsize=(10, 6))
 plt.bar(topics, average_accuracies, color='lightgreen')
@@ -158,3 +159,4 @@ plt.title('Average Accuracy by Topic')
 plt.xticks(rotation=45, ha="right")
 plt.tight_layout()
 plt.show()
+
